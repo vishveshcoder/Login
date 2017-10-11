@@ -1,0 +1,34 @@
+<div class = "container" style = ""  >
+
+	<h2> Login Form </h2>
+  <div [hidden] = "check()" class="alert alert-danger">
+    <strong>Wrong Credentials!</strong> Password is Incorrect
+  </div>
+	<form #userForm = "ngForm" (ngSubmit) = "onSubmit(userForm.value)">
+		<div class = "row form-group">
+			<div class = "col-sm-12 col-md-6">
+
+			<label for = "username" [ngClass] = "nameRef.valid || nameRef.pristine? '' : 'text-danger'">Username</label>
+			<input type = 'text' #nameRef="ngModel" id = "username" ngModel name = "username" class = "form-control" required>
+			<div [hidden] = "nameRef.valid || nameRef.pristine" class = "text-danger">
+			Please Enter Username
+			</div>
+			</div>
+		</div>
+
+		<div class = "row form-group">
+			<div class = "col-sm-12 col-md-6">
+			<label for = "password" [ngClass] = "passRef.valid || passRef.pristine? '' : 'text-danger'">Password</label>
+			<input type = 'password' #passRef = "ngModel" required id = "password" ngModel name = "password" class = "form-control">
+				<div [hidden] = "passRef.valid || passRef.pristine" class = "text-danger">
+				  Please Enter Password
+			</div>
+
+			</div>
+
+		</div>
+		<button type = 'submit' [disabled] = "userForm.invalid" class = 'btn btn-primary'> Submit  </button>
+
+	</form>
+
+</div>
