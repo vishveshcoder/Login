@@ -12,7 +12,6 @@ var app_component_1 = require("./app.component");
 var success_component_1 = require("./success/success.component");
 var login_component_1 = require("./login/login.component");
 var router_1 = require("@angular/router");
-var app_route_js_1 = require("./app.route.js");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -20,7 +19,17 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, router_1.RouterModule.forRoot(app_route_js_1.appRoutes)
+        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, router_1.RouterModule.forRoot([
+                { path: '', redirectTo: '/login', pathMatch: 'full' },
+                { path: 'login',
+                    component: login_component_1.LoginComponent,
+                },
+                { path: 'success',
+                    component: success_component_1.SuccessComponent
+                },
+                { path: '**',
+                    redirectTo: '/login' }
+            ])
         ],
         declarations: [app_component_1.AppComponent, success_component_1.SuccessComponent, login_component_1.LoginComponent],
         bootstrap: [app_component_1.AppComponent]
