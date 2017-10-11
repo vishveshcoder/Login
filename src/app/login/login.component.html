@@ -1,12 +1,23 @@
-<div class = "container" style = ""  >
 
-	<h2> Login Form </h2>
+<div class = "row" style = "background-color:#babbbc; margin-top:'50%'">
+<div class = "container "   >
+
+
+<div class ="row" >
+
+  <div class = "col-sm-2 ">
+  </div>
+  <div class = "col-sm-8 ">
+
+
   <div [hidden] = "check()" class="alert alert-danger">
     <strong>Wrong Credentials!</strong> Password is Incorrect
   </div>
-	<form #userForm = "ngForm" (ngSubmit) = "onSubmit(userForm.value)">
+	<form #userForm = "ngForm" class = "form-horizontal" (ngSubmit) = "onSubmit(userForm.value)">
 		<div class = "row form-group">
-			<div class = "col-sm-12 col-md-6">
+
+
+			<div class = "col-sm-12 col-md-12">
 
 			<label for = "username" [ngClass] = "nameRef.valid || nameRef.pristine? '' : 'text-danger'">Username</label>
 			<input type = 'text' #nameRef="ngModel" id = "username" ngModel name = "username" class = "form-control" required>
@@ -14,10 +25,12 @@
 			Please Enter Username
 			</div>
 			</div>
+
+
 		</div>
 
 		<div class = "row form-group">
-			<div class = "col-sm-12 col-md-6">
+			<div class = "col-sm-12 col-md-12">
 			<label for = "password" [ngClass] = "passRef.valid || passRef.pristine? '' : 'text-danger'">Password</label>
 			<input type = 'password' #passRef = "ngModel" required id = "password" ngModel name = "password" class = "form-control">
 				<div [hidden] = "passRef.valid || passRef.pristine" class = "text-danger">
@@ -27,8 +40,18 @@
 			</div>
 
 		</div>
-		<button type = 'submit' [disabled] = "userForm.invalid" class = 'btn btn-primary'> Submit  </button>
-
+    <div class="row form-group">
+      <div class = "col-sm-6">
+      </div>
+      <div class = "col-sm-12 col-md-12">
+		<button type = 'submit'  [disabled] = "userForm.invalid" class = 'btn btn-primary btn-md text-center'> Submit  </button>
+  </div>
+</div>
 	</form>
+</div>
+  <div class = "col-sm-2">
+  </div>
+</div>
 
+</div>
 </div>
