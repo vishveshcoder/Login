@@ -39,4 +39,12 @@ describe('LoginComponent', function () {
 
 }  );
 
+it(' Checking Password Verification', () =>{
+
+
+  comp.onSubmit({username:'vb',password:'vb'});
+  expect(comp.cr).toBe('false');
+
+});
+
 });
